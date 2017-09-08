@@ -6,18 +6,20 @@ db.serialize(()=>{
 
     db.run(`CREATE TABLE IF NOT EXISTS supervisor (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nama STRING,
-        email STRING 
-    )`
+        nama VARCHAR(200),
+        email VARCHAR(200) 
+    )`,()=>{
+        console.log('TABEL supervisor selesai dibuat!')
+    }
     )
-    console.log('TABEL supervisor selesai dibuat!')
-
     db.run(`CREATE TABLE IF NOT EXISTS projects (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        nama STRING,
-        status STRING,
+        nama VARCHAR(200),
+        status VARCHAR(200),
         idsupervisor INTEGER,
         FOREIGN KEY (idsupervisor) REFERENCES supervisor(id)
-    )`)
-    console.log('TABEL projects selesai dibuat!')
+    )`,()=>{
+        console.log('TABEL projects selesai dibuat!')
+    })
+    
 })
