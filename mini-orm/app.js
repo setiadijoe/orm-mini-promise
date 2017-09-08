@@ -1,0 +1,6 @@
+const express = require('express')
+const sqlite = require('sqlite3').verbose()
+const bodyparser = require('body-parser')
+const db = new sqlite3.Database('db/data.db')
+app.use(bodyparser.urlencoded({extended:true}))
+app.use('view engine', 'ejs')
