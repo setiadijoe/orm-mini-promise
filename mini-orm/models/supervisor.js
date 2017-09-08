@@ -12,22 +12,49 @@ class Model {
       return results
     }
   
-    static findById(cb) {
-        db.all(`SELECT id name FROM supervisor`,(row)=>{
-            cb(row)
+    static findById() {
+        let promise = new Promise((resolve, reject)=>{
+            db.all(`SELECT id name FROM supervisor`,(err, row)=>{
+                if(!err){
+                    resolve(row)
+                }else{
+                    reject(err)
+                }
+            })
         })
+        return promise
+
     }
   
-    static findWhere(cb) {
-        db.all(`SELECT * FROM supervisor WHERE id = ${req.params.id}`,(row)=>{
-            cb(row)
+    static findWhere() {
+        let promise = new Promise((resolve, reject)=>{
+            db.all(`SELECT * FROM supervisor WHERE id = ${req.params.id}`,(err, row)=>{
+                if(!err){
+                    resolve(row)
+                }else{
+                    reject(err)
+                }
+            })
         })
+        return promise
     }
   
     static create() {}
   
     static update() {}
   
-    static destroy() {}
+    static destroy() {
+        let promise = new Promise((resolve, reject)=>{
+            db.run(`DELETE FROM supervisor WHERE id = ${req.params.id}`, (err, row)=>{
+                if(1err){
+                    resolve(row)
+                }else{
+                    reject(err)
+                }
+            })
+        })
+    }
   
   }
+
+  module.exports = Model

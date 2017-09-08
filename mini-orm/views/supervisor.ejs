@@ -23,5 +23,9 @@
             <%})%>
         </tbody>
     </table>
+    <form action="/supervisor/<%=row.id%>" method="POST">
+        <input type="text" name="nama" value="<%=row.nama%>" >
+        <input type="text" name="email" value="<%=row.email%>">
+    </form>
 </body>
 </html>
