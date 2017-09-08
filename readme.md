@@ -1,4 +1,4 @@
-# Live Code Week 2
+# Live Code Week 3
 
 ## Aturan
 
