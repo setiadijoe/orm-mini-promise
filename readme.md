@@ -20,7 +20,5 @@ Durasi live code ini adalah **2 jam 15 menit**
 
 ## Soal dan Skor
 
-Total skor live code ini adalah 100 dengan distribusi skor seperti berikut:
-
-- [Mini ORM](mini-orm/readme.md) (70-100)
+- [Mini ORM](mini-orm/readme.md) (75-120)
 - [Promise Migration](promise-migration/readme.md) (30)
